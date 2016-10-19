@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Scroll-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewScroll" customModule="testUIScrollView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LvE-2Q-2wQ">
+                                <rect key="frame" x="20" y="20" width="560" height="478"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Y6W-Hf-cDT"/>
+                                </connections>
+                            </scrollView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="49Y-6G-qvO">
+                                <rect key="frame" x="198" y="522" width="204" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="6y9-Ws-MSF"/>
+                                    <constraint firstAttribute="height" constant="30" id="KtD-Kn-c4f"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="actionZoom_InOut:" destination="BYZ-38-t0r" eventType="valueChanged" id="5x2-rR-7tY"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="49Y-6G-qvO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Z6-uB-GlD"/>
+                            <constraint firstItem="LvE-2Q-2wQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="9Zn-vG-qs1"/>
+                            <constraint firstItem="LvE-2Q-2wQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="SfY-U5-RiB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LvE-2Q-2wQ" secondAttribute="trailing" id="WBH-Ro-UPt"/>
+                            <constraint firstItem="49Y-6G-qvO" firstAttribute="top" secondItem="LvE-2Q-2wQ" secondAttribute="bottom" constant="24" id="dte-fi-rfe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LvE-2Q-2wQ" secondAttribute="bottom" constant="102" id="x2Z-lq-5GL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scollView" destination="LvE-2Q-2wQ" id="nZf-dV-cfF"/>
+                        <outlet property="sld_Zoom" destination="49Y-6G-qvO" id="5HL-pH-baw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="418"/>
+        </scene>
+    </scenes>
+</document>
